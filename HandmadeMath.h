@@ -2329,12 +2329,12 @@ static inline Quat InvQ(Quat Left)
 }
 
 COVERAGE(NormQ, 1)
-static inline Quat NormQ(Quat Quat)
+static inline Quat NormQ(Quat quat)
 {
     ASSERT_COVERED(NormQ);
 
     /* NOTE(lcf): Take advantage of SSE implementation in NormV4 */
-    Vec4 Vec = {Quat.X, Quat.Y, Quat.Z, Quat.W};
+    Vec4 Vec = {quat.X, quat.Y, quat.Z, quat.W};
     Vec = NormV4(Vec);
     Quat Result = {Vec.X, Vec.Y, Vec.Z, Vec.W};
 
