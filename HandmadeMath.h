@@ -433,7 +433,12 @@ typedef union HMM_Quat
 #endif
 } HMM_Quat;
 
-typedef signed int HMM_Bool;
+#if defined(HANDMADE_MATH_USE_STD_BOOL)
+    #include <stdbool.h>
+    typedef bool HMM_Bool;
+#elif
+    typedef signed int HMM_Bool;
+#endif
 
 /*
  * Angle unit conversion functions
