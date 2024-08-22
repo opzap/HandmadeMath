@@ -436,7 +436,7 @@ typedef union HMM_Quat
 #if defined(HANDMADE_MATH_USE_STD_BOOL)
     #include <stdbool.h>
     typedef bool HMM_Bool;
-#elif
+#else
     typedef signed int HMM_Bool;
 #endif
 
